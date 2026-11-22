@@ -529,10 +529,12 @@ elif app_mode == "📈 Temporal Trends & Weather Dynamics":
     
     fig_dual.update_layout(
         title=f"Multi-Year Rainfall vs. Dengue Epidemic Waves ({selected_ward})",
-        yaxis=dict(title="Dengue Cases", titlefont=dict(color="#ef4444"), tickfont=dict(color="#ef4444")),
+        yaxis=dict(
+            title=dict(text="Dengue Cases", font=dict(color="#ef4444")),
+            tickfont=dict(color="#ef4444")
+        ),
         yaxis2=dict(
-            title="Rainfall (mm)",
-            titlefont=dict(color="#0284c7"),
+            title=dict(text="Rainfall (mm)", font=dict(color="#0284c7")),
             tickfont=dict(color="#0284c7"),
             overlaying="y",
             side="right"
