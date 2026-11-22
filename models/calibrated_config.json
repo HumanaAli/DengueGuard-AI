@@ -1,0 +1,39 @@
+{
+  "strategy": "Option A: Post-hoc Threshold Calibration on Baseline HistGBM-Poisson",
+  "status": "Adopted Operational Configuration",
+  "adopted_at": "2026-11-21",
+  "models_used": {
+    "2w": "models/model_2w.joblib",
+    "4w": "models/model_4w.joblib"
+  },
+  "thresholds": {
+    "2w": {
+      "Low_max": 0.8,
+      "Medium_min": 0.8,
+      "Medium_max": 4.0,
+      "High_min": 4.0,
+      "High_max": 8.0,
+      "Critical_min": 8.0
+    },
+    "4w": {
+      "Low_max": 0.8,
+      "Medium_min": 0.8,
+      "Medium_max": 4.0,
+      "High_min": 4.0,
+      "High_max": 8.5,
+      "Critical_min": 8.5
+    }
+  },
+  "actual_ground_truth_definitions": {
+    "Low": "cases < 1.0 (0 cases)",
+    "Medium": "1.0 <= cases < 4.0 (1, 2, 3 cases)",
+    "High": "4.0 <= cases < 10.0 (4 to 9 cases)",
+    "Critical": "cases >= 10.0 (10+ cases)"
+  },
+  "operational_action_guidelines": {
+    "Low": "Routine surveillance; public health monitoring.",
+    "Medium": "Targeted source reduction; drain cleaning and larvicide deployment.",
+    "High": "Focused focal spraying; community awareness; hospital readiness alert.",
+    "Critical": "Emergency epidemic response; emergency fogging; medical supply surge."
+  }
+}
